@@ -13,7 +13,8 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;
     bool isDead;
     bool isSinking;
-    public int currentHealth;
+    private int currentHealth;
+    // Enemy Type Index Indicates Which type of enemy it is
     public int enemyTypeIndex;
 
     public int CurrentHealth { get { return currentHealth; }
