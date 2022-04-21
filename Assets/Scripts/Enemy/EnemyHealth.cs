@@ -2,7 +2,7 @@
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int startingHealth = 100;
+    //public int startingHealth = 100;
     public float sinkSpeed = 2.5f;
     public int scoreValue = 10;
     public AudioClip deathClip;
@@ -13,9 +13,12 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;
     bool isDead;
     bool isSinking;
-    int currentHealth;
+    public int currentHealth;
+    public int enemyTypeIndex;
 
-    public int CurrentHealth { get { return currentHealth; } }
+    public int CurrentHealth { get { return currentHealth; }
+        set { currentHealth = value; }
+    }
 
     void Awake ()
     {
@@ -24,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
         hitParticles = GetComponentInChildren <ParticleSystem> ();
         capsuleCollider = GetComponent <CapsuleCollider> ();
 
-        currentHealth = startingHealth;
+        currentHealth = 100;
     }
 
 
